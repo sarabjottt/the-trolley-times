@@ -9,10 +9,14 @@ export default function Footer() {
         <nav>
           <ul>
             <li>
-              <Link to="contact-us">Contact Us</Link>
+              <Link activeClassName="active" to="/contact-us">
+                Contact Us
+              </Link>
             </li>
             <li>
-              <Link to="about-us">About Us</Link>
+              <Link activeClassName="active" to="/about-us">
+                About Us
+              </Link>
             </li>
           </ul>
         </nav>

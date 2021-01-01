@@ -1,9 +1,10 @@
 @import "var";
 @import "fonts";
+@import "mixins";
 
 html {
   font-family: Lora, serif;
-  font: 16px;
+  font-size: 16px;
 }
 body {
   font-family: Lora, sans-serif;
@@ -12,10 +13,13 @@ body {
   margin: 0;
 }
 a,
+ul,
 li {
   color: $black;
   text-decoration: none;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 button,
 .btn {
@@ -61,6 +65,25 @@ section {
   padding: 0 3%;
   max-width: 1200px;
 }
+section.today {
+  position: relative;
+  top: -90px;
+  height: 0;
+  text-align: left;
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+    &:first-child {
+      font-weight: 800;
+    }
+  }
+  @include for-tablet-portrait-up {
+    top: 0;
+    height: auto;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
 .master-nav {
   border-top: 1px solid #cecece;
   border-bottom: 1px solid $black;
@@ -71,6 +94,14 @@ section {
     justify-content: center;
     li {
       padding: 0 10px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #e8e8e8;
+        border-radius: 5px;
+      }
+      a.active {
+        font-weight: 800;
+      }
     }
   }
 }
@@ -97,6 +128,15 @@ section.edition-meta {
       font-style: italic;
     }
   }
+  @include for-phone-only {
+    grid-template-columns: 1fr;
+    p {
+      margin: 0;
+    }
+    h3 {
+      margin-top: 5px;
+    }
+  }
 }
 article iframe {
   margin: 30px 0;
@@ -120,7 +160,10 @@ article iframe {
     border-radius: 5px;
     text-align: left;
     width: 350px;
-
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: #d6c8b9;
+    }
     .meta {
       padding: 15px 20px;
     }
@@ -159,11 +202,48 @@ footer {
     border-top: 1px solid #cecece;
     display: flex;
     align-items: center;
+    p {
+      margin-right: 30px;
+    }
     ul {
       display: flex;
       li {
         padding: 0 10px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: #e8e8e8;
+          border-radius: 5px;
+        }
+        a.active {
+          font-weight: 800;
+          border-bottom: 1px solid;
+        }
+      }
+    }
+    @include for-phone-only {
+      flex-direction: column;
+      p {
+        margin-right: 0;
       }
     }
   }
 }
+/* Footer End */
+
+/* About */
+section.about {
+  max-width: 600px;
+}
+/* About End */
+
+/* Contact */
+section.contact {
+  max-width: 600px;
+  h3 {
+    margin-bottom: 0;
+  }
+  a {
+    color: #1c00df;
+  }
+}
+/* Contact End */

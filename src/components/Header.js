@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 export default function Header({ data }) {
+  const dateOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
   return (
     <header>
       <section className="master-bar">
@@ -10,16 +16,25 @@ export default function Header({ data }) {
           <h2>Trolley Times</h2>
         </Link>
       </section>
+      <section className="today">
+        <p>{new Date().toLocaleDateString('en-IN', dateOptions)}</p>
+        <p>Farmers Protest</p>
+      </section>
       <section className="master-nav">
         <nav>
           <ul>
             <li>
-              <Link to={`/${data.contentfulNewsletter.slug}`}>
+              <Link
+                activeClassName="active"
+                to={`/${data.allContentfulNewsletter.nodes[0].slug}`}
+              >
                 Latest Edition
               </Link>
             </li>
             <li>
-              <Link to="/">All Editions</Link>
+              <Link activeClassName="active" to="/">
+                All Editions
+              </Link>
             </li>
           </ul>
         </nav>

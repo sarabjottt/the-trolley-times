@@ -6,8 +6,13 @@ import Footer from './Footer';
 export default function Layout({ children }) {
   const navData = useStaticQuery(graphql`
     {
-      contentfulNewsletter {
-        slug
+      allContentfulNewsletter(
+        sort: { fields: publishDate, order: DESC }
+        limit: 1
+      ) {
+        nodes {
+          slug
+        }
       }
     }
   `);
