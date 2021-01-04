@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "license": "0BSD",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
