@@ -11,7 +11,7 @@ export default function Newsletter({
 
   return (
     <Layout>
-      <Seo title={paper.title} />
+      <Seo title={paper.title} image={`https:${paper.coverImage.file.url}`} />
       <article className="nwslt-wrapper">
         <section className="edition-meta">
           <p className="pub-date">
@@ -76,6 +76,11 @@ export const pageQuery = graphql`
       publishDate
       haveEnglishEdition
       englishEdition {
+        file {
+          url
+        }
+      }
+      coverImage {
         file {
           url
         }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import ogImage from '../assets/images/og-image.jpg';
 
-function SEO({ description, meta, title, keywords }) {
+function SEO({ description, lang, meta, title, image, keywords }) {
   const metaDescription =
     description ||
     'Newsletter dedicated to farmers protest. Reporting from the protest, and for the protest.';
@@ -9,11 +10,14 @@ function SEO({ description, meta, title, keywords }) {
   const metaKeyword =
     keywords || 'Trolley, Times, Newspapper, Farmers, Protest, 2020';
 
+  const metaImage = image || ogImage;
+  const mTitle = title ? `${title} | The Trolley Times` : 'The Trolley Times';
   return (
     <Helmet
-      title={title}
-      titleTemplate="%s | The Trolley Times"
-      defaultTitle="The Trolley Times"
+      htmlAttributes={{
+        lang,
+      }}
+      title={mTitle}
       meta={[
         {
           name: `description`,
@@ -21,11 +25,15 @@ function SEO({ description, meta, title, keywords }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: mTitle,
         },
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: metaImage,
         },
         {
           property: `og:type`,
@@ -37,15 +45,19 @@ function SEO({ description, meta, title, keywords }) {
         },
         {
           name: `twitter:creator`,
-          content: title,
+          content: mTitle,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: mTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: metaImage,
         },
         {
           name: `keywords`,
