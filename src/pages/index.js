@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '../components/Layout';
 import PaperGrid from '../components/PaperGrid';
 import Seo from '../components/Seo';
-import '../styles/main.scss';
 
 export default function Index({ data }) {
   return (

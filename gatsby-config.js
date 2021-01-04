@@ -17,6 +17,13 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-Q2G8RV69RB",
+        head: true,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
