@@ -6,7 +6,7 @@ export default function Weather() {
 
   function FetchWeather() {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Delhi&units=metric&appid=${process.env.OPENWEATHER_API}`
+      `https://api.openweathermap.org/data/2.5/weather?q=Delhi&units=metric&appid=${process.env.GATSBY_OPENWEATHER_API}`
     )
       .then((res) => res.json())
       .then((data) => {
