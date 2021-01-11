@@ -8,7 +8,7 @@ export default function ContactUs() {
       <SEO title="Contact Us" />
       <section className="contact">
         <h1>Contact Us</h1>
-        <h3>Email Submisions:</h3>
+        <h3>Email Submissions:</h3>
         <a href="mailto:timestrolley@gmail.com">timestrolley@gmail.com</a>
         <h3>Twitter:</h3>
         <a href="http://twitter.com/timestrolley">@timestrolley</a>

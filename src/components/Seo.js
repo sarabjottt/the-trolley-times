@@ -8,9 +8,11 @@ function SEO({ description, lang, meta, title, image, keywords }) {
     'Newsletter dedicated to farmers protest. Reporting from the protest, and for the protest.';
 
   const metaKeyword =
-    keywords || 'Trolley, Times, Newspapper, Farmers, Protest, 2020';
+    keywords || 'Trolley, Times, Newspaper, Farmers, Protest, 2020';
 
-  const metaImage = image || ogImage;
+  const metaImage = !image
+    ? `https://www.thetrolleytimes.com${ogImage}`
+    : image;
   const mTitle = title ? `${title} | The Trolley Times` : 'The Trolley Times';
   return (
     <Helmet
