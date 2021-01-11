@@ -21,6 +21,14 @@ export default function Footer() {
           </ul>
         </nav>
       </section>
+
+      <pre>
+        This project is{' '}
+        <a href="https://github.com/sarabjottt/the-trolley-times">
+          Open Source
+        </a>
+        .
+      </pre>
     </footer>
   );
 }
