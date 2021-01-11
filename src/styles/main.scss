@@ -87,6 +87,46 @@ section.today {
     margin-bottom: 5px;
   }
 }
+section.weather {
+  position: relative;
+  top: -90px;
+  text-align: right;
+  height: 0;
+  .wrapper {
+    p {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+    @include for-tablet-portrait-up {
+      //TODO: Need to work on mobile view for weather
+      display: none;
+    }
+  }
+  .w-container {
+    display: flex;
+    justify-content: flex-end;
+    .icon {
+      height: 0;
+      img {
+        width: 50px;
+        margin-top: -8px;
+        margin-right: -4px;
+      }
+    }
+    p {
+      font-size: 0.9rem;
+      margin: 0 5px;
+      font-weight: bold;
+    }
+    span {
+      font-size: 0.7rem;
+      &.temp-min {
+        color: $grey;
+        margin-left: 3px;
+      }
+    }
+  }
+}
 .master-nav {
   border-top: 1px solid #cecece;
   border-bottom: 1px solid $black;

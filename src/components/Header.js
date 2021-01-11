@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Weather from './Weather';
 
 export default function Header({ data }) {
   const dateOptions = {
@@ -19,6 +20,9 @@ export default function Header({ data }) {
       <section className="today">
         <p>{new Date().toLocaleDateString('en-IN', dateOptions)}</p>
         <p>Farmers Protest</p>
+      </section>
+      <section className="weather">
+        <Weather />
       </section>
       <section className="master-nav">
         <nav>
